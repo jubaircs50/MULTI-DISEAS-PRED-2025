@@ -1,5 +1,5 @@
-import os
 import pickle
+import os
 import streamlit as st
 from streamlit_option_menu import option_menu
 
@@ -20,7 +20,6 @@ heart_disease_model = pickle.load(open(f'{working_dir}/saved_models/heart_diseas
 
 parkinsons_model = pickle.load(open(f'{working_dir}/saved_models/parkinsons_model.sav', 'rb'))
 
-# sidebar for navigation
 with st.sidebar:
     selected = option_menu('Multiple Disease Prediction System',
 
@@ -36,13 +35,13 @@ with st.sidebar:
 if selected == 'Diabetes Prediction':
 
     # page title
-    st.title('Diabetes Prediction using ML')
+    st.title('Diabetes Prediction ')
 
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        Pregnancies = st.text_input('Number of Pregnancies')
+        Pregnancies = st.text_input('Pregnancy Count')
 
     with col2:
         Glucose = st.text_input('Glucose Level')
